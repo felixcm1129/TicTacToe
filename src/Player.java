@@ -10,5 +10,10 @@ public class Player {
     public char getSymbol()
     {
         return symbol;
+    }   
+
+    public void setSymbol(char s)
+    {
+        this.symbol = s;
     }
 }

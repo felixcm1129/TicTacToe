@@ -23,7 +23,7 @@ public class TicTacToe_Test {
 		//Arrange
 		var expected = false;
 		//Act
-		var actual = tictactoe.playTurn(0);
+		var actual = tictactoe.playTurn(10);
 		//Assert
 		assertEquals(expected, actual);
 	}
@@ -49,15 +49,24 @@ public class TicTacToe_Test {
 		//Act
 		//player1
 		tictactoe.playTurn(1);
+		var actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(4);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(2);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(7);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(3);
-		var actual = tictactoe.checkWinner();
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//Assert
 		assertEquals(expected, actual);
 	}
@@ -71,17 +80,28 @@ public class TicTacToe_Test {
 		//Act
 		//player1
 		tictactoe.playTurn(4);
+		var actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(1);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(7);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(2);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(5);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(3);
-		var actual = tictactoe.checkWinner();
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//Assert
 		assertEquals(expected, actual);
 	}
@@ -95,23 +115,86 @@ public class TicTacToe_Test {
 		//Act
 		//player1
 		tictactoe.playTurn(1);
+		var actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(2);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(3);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(4);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(6);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(5);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(7);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player2
 		tictactoe.playTurn(9);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//player1
 		tictactoe.playTurn(8);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//Assert
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void checkWinPlayer1SiTouslesToursJouer() 
+	{
+		TicTacToe tictactoe = new TicTacToe();
+		//Arrange
+		var expected = "Congratulations Player 1 you won!";
+		//player1
+		tictactoe.playTurn(1);
 		var actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player2
+		tictactoe.playTurn(2);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player1
+		tictactoe.playTurn(5);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player2
+		tictactoe.playTurn(4);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player1
+		tictactoe.playTurn(6);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player2
+		tictactoe.playTurn(8);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player1
+		tictactoe.playTurn(3);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player2
+		tictactoe.playTurn(7);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
+		//player1
+		tictactoe.playTurn(9);
+		actual = tictactoe.checkWinner();
+		System.out.println(actual);
 		//Assert
 		assertEquals(expected, actual);
 	}

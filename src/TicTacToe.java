@@ -10,6 +10,7 @@ public class TicTacToe {
     private Boolean end;
     private ArrayList<Integer> player1Positions = new ArrayList<Integer>();
     private ArrayList<Integer> player2Positions = new ArrayList<Integer>();
+    private ArrayList<Integer> positionsDisponible = new ArrayList<Integer>();
     private String user;
     private int turn;
     private char symbol;
@@ -51,6 +52,7 @@ public class TicTacToe {
         this.player = new Player[2];
         this.player[0] = new Player('X');
         this.player[1] = new Player('O');
+        setPositionsDisponible();
 
         this.grid = new Grid();
 
@@ -73,7 +75,7 @@ public class TicTacToe {
         //int playerPos = scan.nextInt();
         int playerPos = pos;
 
-        if(player1Positions.contains(playerPos) || player2Positions.contains(playerPos) || playerPos < 1  || playerPos > 9)
+        if(player1Positions.contains(playerPos) || player2Positions.contains(playerPos) || !positionsDisponible.contains(playerPos))
         {
            System.out.println("Position prise par l'autre joueur ou numéro de position invalide!");
            return false;
@@ -144,7 +146,7 @@ public class TicTacToe {
             return "Tie!";
         }
 
-        return "";
+        return "Keep playing";
     }
 
 
@@ -167,5 +169,27 @@ public class TicTacToe {
             }
             i++;
         }
+    }
+    
+    public int getTurn() {
+    	return turn;
+    }
+    
+    public ArrayList<Integer> getPlayer1Posisitions()
+    {
+    	return player1Positions;
+    }
+    
+    public ArrayList<Integer> getPlayer2Posisitions()
+    {
+    	return player2Positions;
+    }
+    
+    private void setPositionsDisponible()
+    {
+    	for(int i = 1; i < 10; i++)
+    	{
+    		positionsDisponible.add(i);
+    	}
     }
 }
